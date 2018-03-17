@@ -1,0 +1,14 @@
+<!--:setfiletype htmldjango -->
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls admin_static admin_list %}
+
+{% block title %}{{ title }} {% trans 'Dodaj wiele słów do '  %}{{table_name}}{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Dodaj wszystkie" />
+</form>
+{% endblock %}
+
